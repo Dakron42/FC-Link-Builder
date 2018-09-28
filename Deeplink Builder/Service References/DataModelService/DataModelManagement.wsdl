@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://model.v81.api.keysurvey.com" name="DataModelManagement" targetNamespace="http://model.v81.api.keysurvey.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/model/DataModelsService?xsd=1" namespace="http://v81.api.keysurvey.com" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/model/DataModelsService?xsd=2" namespace="http://model.v81.api.keysurvey.com" />
+    </xsd:schema>
+  </types>
+  <message name="createFilter">
+    <part name="parameters" element="tns:createFilter" />
+  </message>
+  <message name="createFilterResponse">
+    <part name="parameters" element="tns:createFilterResponse" />
+  </message>
+  <message name="WSIllegalArgumentException">
+    <part xmlns:ns1="http://v81.api.keysurvey.com" name="fault" element="ns1:WSIllegalArgumentException" />
+  </message>
+  <message name="getFilter">
+    <part name="parameters" element="tns:getFilter" />
+  </message>
+  <message name="getFilterResponse">
+    <part name="parameters" element="tns:getFilterResponse" />
+  </message>
+  <message name="getFilters">
+    <part name="parameters" element="tns:getFilters" />
+  </message>
+  <message name="getFiltersResponse">
+    <part name="parameters" element="tns:getFiltersResponse" />
+  </message>
+  <message name="getModelById">
+    <part name="parameters" element="tns:getModelById" />
+  </message>
+  <message name="getModelByIdResponse">
+    <part name="parameters" element="tns:getModelByIdResponse" />
+  </message>
+  <message name="WSObjectNotFoundException">
+    <part xmlns:ns2="http://v81.api.keysurvey.com" name="fault" element="ns2:WSObjectNotFoundException" />
+  </message>
+  <message name="deleteFilter">
+    <part name="parameters" element="tns:deleteFilter" />
+  </message>
+  <message name="deleteFilterResponse">
+    <part name="parameters" element="tns:deleteFilterResponse" />
+  </message>
+  <message name="WSSecurityException">
+    <part xmlns:ns3="http://v81.api.keysurvey.com" name="fault" element="ns3:WSSecurityException" />
+  </message>
+  <message name="changeContactState">
+    <part name="parameters" element="tns:changeContactState" />
+  </message>
+  <message name="changeContactStateResponse">
+    <part name="parameters" element="tns:changeContactStateResponse" />
+  </message>
+  <message name="deleteModelObject">
+    <part name="parameters" element="tns:deleteModelObject" />
+  </message>
+  <message name="deleteModelObjectResponse">
+    <part name="parameters" element="tns:deleteModelObjectResponse" />
+  </message>
+  <message name="editModelObject">
+    <part name="parameters" element="tns:editModelObject" />
+  </message>
+  <message name="editModelObjectResponse">
+    <part name="parameters" element="tns:editModelObjectResponse" />
+  </message>
+  <message name="addModelObjects">
+    <part name="parameters" element="tns:addModelObjects" />
+  </message>
+  <message name="addModelObjectsResponse">
+    <part name="parameters" element="tns:addModelObjectsResponse" />
+  </message>
+  <message name="getFilteredObjects">
+    <part name="parameters" element="tns:getFilteredObjects" />
+  </message>
+  <message name="getFilteredObjectsResponse">
+    <part name="parameters" element="tns:getFilteredObjectsResponse" />
+  </message>
+  <message name="getModelObjectsByFilter">
+    <part name="parameters" element="tns:getModelObjectsByFilter" />
+  </message>
+  <message name="getModelObjectsByFilterResponse">
+    <part name="parameters" element="tns:getModelObjectsByFilterResponse" />
+  </message>
+  <message name="deleteColumn">
+    <part name="parameters" element="tns:deleteColumn" />
+  </message>
+  <message name="deleteColumnResponse">
+    <part name="parameters" element="tns:deleteColumnResponse" />
+  </message>
+  <message name="editColumn">
+    <part name="parameters" element="tns:editColumn" />
+  </message>
+  <message name="editColumnResponse">
+    <part name="parameters" element="tns:editColumnResponse" />
+  </message>
+  <message name="addColumn">
+    <part name="parameters" element="tns:addColumn" />
+  </message>
+  <message name="addColumnResponse">
+    <part name="parameters" element="tns:addColumnResponse" />
+  </message>
+  <message name="renameModel">
+    <part name="parameters" element="tns:renameModel" />
+  </message>
+  <message name="renameModelResponse">
+    <part name="parameters" element="tns:renameModelResponse" />
+  </message>
+  <message name="setKeyField">
+    <part name="parameters" element="tns:setKeyField" />
+  </message>
+  <message name="setKeyFieldResponse">
+    <part name="parameters" element="tns:setKeyFieldResponse" />
+  </message>
+  <message name="createModel">
+    <part name="parameters" element="tns:createModel" />
+  </message>
+  <message name="createModelResponse">
+    <part name="parameters" element="tns:createModelResponse" />
+  </message>
+  <message name="deleteModel">
+    <part name="parameters" element="tns:deleteModel" />
+  </message>
+  <message name="deleteModelResponse">
+    <part name="parameters" element="tns:deleteModelResponse" />
+  </message>
+  <message name="addModelObjectWithUser">
+    <part name="parameters" element="tns:addModelObjectWithUser" />
+  </message>
+  <message name="addModelObjectWithUserResponse">
+    <part name="parameters" element="tns:addModelObjectWithUserResponse" />
+  </message>
+  <message name="addModelObject">
+    <part name="parameters" element="tns:addModelObject" />
+  </message>
+  <message name="addModelObjectResponse">
+    <part name="parameters" element="tns:addModelObjectResponse" />
+  </message>
+  <message name="listModels">
+    <part name="parameters" element="tns:listModels" />
+  </message>
+  <message name="listModelsResponse">
+    <part name="parameters" element="tns:listModelsResponse" />
+  </message>
+  <portType name="DataModelsService">
+    <operation name="createFilter">
+      <input message="tns:createFilter" />
+      <output message="tns:createFilterResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getFilter">
+      <input message="tns:getFilter" />
+      <output message="tns:getFilterResponse" />
+    </operation>
+    <operation name="getFilters">
+      <input message="tns:getFilters" />
+      <output message="tns:getFiltersResponse" />
+    </operation>
+    <operation name="getModelById">
+      <input message="tns:getModelById" />
+      <output message="tns:getModelByIdResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="deleteFilter">
+      <input message="tns:deleteFilter" />
+      <output message="tns:deleteFilterResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="changeContactState">
+      <input message="tns:changeContactState" />
+      <output message="tns:changeContactStateResponse" />
+    </operation>
+    <operation name="deleteModelObject">
+      <input message="tns:deleteModelObject" />
+      <output message="tns:deleteModelObjectResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="editModelObject">
+      <input message="tns:editModelObject" />
+      <output message="tns:editModelObjectResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="addModelObjects">
+      <input message="tns:addModelObjects" />
+      <output message="tns:addModelObjectsResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getFilteredObjects">
+      <input message="tns:getFilteredObjects" />
+      <output message="tns:getFilteredObjectsResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getModelObjectsByFilter">
+      <input message="tns:getModelObjectsByFilter" />
+      <output message="tns:getModelObjectsByFilterResponse" />
+    </operation>
+    <operation name="deleteColumn">
+      <input message="tns:deleteColumn" />
+      <output message="tns:deleteColumnResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="editColumn">
+      <input message="tns:editColumn" />
+      <output message="tns:editColumnResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="addColumn">
+      <input message="tns:addColumn" />
+      <output message="tns:addColumnResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="renameModel">
+      <input message="tns:renameModel" />
+      <output message="tns:renameModelResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="setKeyField">
+      <input message="tns:setKeyField" />
+      <output message="tns:setKeyFieldResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="createModel">
+      <input message="tns:createModel" />
+      <output message="tns:createModelResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="deleteModel">
+      <input message="tns:deleteModel" />
+      <output message="tns:deleteModelResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="addModelObjectWithUser">
+      <input message="tns:addModelObjectWithUser" />
+      <output message="tns:addModelObjectWithUserResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="addModelObject">
+      <input message="tns:addModelObject" />
+      <output message="tns:addModelObjectResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="listModels">
+      <input message="tns:listModels" />
+      <output message="tns:listModelsResponse" />
+    </operation>
+  </portType>
+  <binding name="DataModelsServicePortBinding" type="tns:DataModelsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="createFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFilters">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getModelById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="changeContactState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteModelObject">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="editModelObject">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addModelObjects">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFilteredObjects">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getModelObjectsByFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteColumn">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="editColumn">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addColumn">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="renameModel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setKeyField">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createModel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteModel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addModelObjectWithUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addModelObject">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="listModels">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DataModelManagement">
+    <port name="DataModelsServicePort" binding="tns:DataModelsServicePortBinding">
+      <soap:address location="http://app.form.com:80/Member/api/v81/model/DataModelsService" />
+    </port>
+  </service>
+</definitions>

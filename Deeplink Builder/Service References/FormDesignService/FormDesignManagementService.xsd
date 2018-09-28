@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://user.v81.api.keysurvey.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="WSFormPermission">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VIEW" />
+      <xs:enumeration value="EDIT" />
+      <xs:enumeration value="DELETE" />
+      <xs:enumeration value="LAUNCH" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

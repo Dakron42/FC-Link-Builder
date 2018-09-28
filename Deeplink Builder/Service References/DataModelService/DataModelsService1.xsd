@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://model.v81.api.keysurvey.com" targetNamespace="http://model.v81.api.keysurvey.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addColumn" type="tns:addColumn" />
+  <xs:element name="addColumnResponse" type="tns:addColumnResponse" />
+  <xs:element name="addModelObject" type="tns:addModelObject" />
+  <xs:element name="addModelObjectResponse" type="tns:addModelObjectResponse" />
+  <xs:element name="addModelObjectWithUser" type="tns:addModelObjectWithUser" />
+  <xs:element name="addModelObjectWithUserResponse" type="tns:addModelObjectWithUserResponse" />
+  <xs:element name="addModelObjects" type="tns:addModelObjects" />
+  <xs:element name="addModelObjectsResponse" type="tns:addModelObjectsResponse" />
+  <xs:element name="changeContactState" type="tns:changeContactState" />
+  <xs:element name="changeContactStateResponse" type="tns:changeContactStateResponse" />
+  <xs:element name="createFilter" type="tns:createFilter" />
+  <xs:element name="createFilterResponse" type="tns:createFilterResponse" />
+  <xs:element name="createModel" type="tns:createModel" />
+  <xs:element name="createModelResponse" type="tns:createModelResponse" />
+  <xs:element name="deleteColumn" type="tns:deleteColumn" />
+  <xs:element name="deleteColumnResponse" type="tns:deleteColumnResponse" />
+  <xs:element name="deleteFilter" type="tns:deleteFilter" />
+  <xs:element name="deleteFilterResponse" type="tns:deleteFilterResponse" />
+  <xs:element name="deleteModel" type="tns:deleteModel" />
+  <xs:element name="deleteModelObject" type="tns:deleteModelObject" />
+  <xs:element name="deleteModelObjectResponse" type="tns:deleteModelObjectResponse" />
+  <xs:element name="deleteModelResponse" type="tns:deleteModelResponse" />
+  <xs:element name="editColumn" type="tns:editColumn" />
+  <xs:element name="editColumnResponse" type="tns:editColumnResponse" />
+  <xs:element name="editModelObject" type="tns:editModelObject" />
+  <xs:element name="editModelObjectResponse" type="tns:editModelObjectResponse" />
+  <xs:element name="getFilter" type="tns:getFilter" />
+  <xs:element name="getFilterResponse" type="tns:getFilterResponse" />
+  <xs:element name="getFilteredObjects" type="tns:getFilteredObjects" />
+  <xs:element name="getFilteredObjectsResponse" type="tns:getFilteredObjectsResponse" />
+  <xs:element name="getFilters" type="tns:getFilters" />
+  <xs:element name="getFiltersResponse" type="tns:getFiltersResponse" />
+  <xs:element name="getModelById" type="tns:getModelById" />
+  <xs:element name="getModelByIdResponse" type="tns:getModelByIdResponse" />
+  <xs:element name="getModelObjectsByFilter" type="tns:getModelObjectsByFilter" />
+  <xs:element name="getModelObjectsByFilterResponse" type="tns:getModelObjectsByFilterResponse" />
+  <xs:element name="listModels" type="tns:listModels" />
+  <xs:element name="listModelsResponse" type="tns:listModelsResponse" />
+  <xs:element name="renameModel" type="tns:renameModel" />
+  <xs:element name="renameModelResponse" type="tns:renameModelResponse" />
+  <xs:element name="setKeyField" type="tns:setKeyField" />
+  <xs:element name="setKeyFieldResponse" type="tns:setKeyFieldResponse" />
+  <xs:element name="wsModel" type="tns:WSModel" />
+  <xs:element name="wsModelColumn" type="tns:WSModelColumn" />
+  <xs:element name="wsModelColumnType" type="tns:WSModelColumnType" />
+  <xs:element name="wsModelObject" type="tns:WSModelObject" />
+  <xs:element name="wsModelObjectFilter" type="tns:WSModelObjectFilter" />
+  <xs:element name="wsModelObjectFilterCondition" type="tns:WSModelObjectFilterCondition" />
+  <xs:complexType name="deleteFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteFilterResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addModelObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="models" type="tns:WSModelObject" />
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="keyFieldName" type="xs:string" />
+      <xs:element name="properties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string" />
+                  <xs:element minOccurs="0" name="value" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addModelObjectsResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getModelObjectsByFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getModelObjectsByFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSModelObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="column" type="tns:WSModelColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="columnType" type="tns:WSModelColumnType" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelColumnType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="columnTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="maxValue" type="xs:string" />
+      <xs:element minOccurs="0" name="minValue" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="pattern" type="xs:string" />
+      <xs:element minOccurs="0" name="warningText" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editColumnResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="column" type="tns:WSModelColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addColumnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="filter" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelObjectFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="filters" nillable="true" type="tns:WSModelObjectFilterCondition" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="logicalCondition" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelObjectFilterCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="condition" type="tns:wsFilterCondition" />
+      <xs:element minOccurs="0" name="fieldName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="values" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getModelById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getModelByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="columns" nillable="true" type="tns:WSModelColumn" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="keyFieldName" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addModelObjectWithUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="model" type="tns:WSModelObject" />
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addModelObjectWithUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeContactState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objectId" type="xs:long" />
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="active" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeContactStateResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="deleteModelObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteModelObjectResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="editModelObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="model" type="tns:WSModelObject" />
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editModelObjectResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="renameModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="modelName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="renameModelResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="setKeyField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="columnName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setKeyFieldResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addModelObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="model" type="tns:WSModelObject" />
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addModelObjectResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="columnName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteColumnResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="deleteModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteModelResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listModels">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listModelsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="model" type="tns:WSModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFiltersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilteredObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modelId" type="xs:long" />
+      <xs:element minOccurs="0" name="filter" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilteredObjectsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSModelObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="wsFilterCondition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_EQUAL" />
+      <xs:enumeration value="EQUAL" />
+      <xs:enumeration value="CONTAINS" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

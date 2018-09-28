@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://result.form.v81.api.keysurvey.com" name="FormResultManagement" targetNamespace="http://result.form.v81.api.keysurvey.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/form/result/FormResultManagementService?xsd=1" namespace="http://v81.api.keysurvey.com" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/form/result/FormResultManagementService?xsd=2" namespace="http://result.form.v81.api.keysurvey.com" />
+    </xsd:schema>
+  </types>
+  <message name="getResponse">
+    <part name="parameters" element="tns:getResponse" />
+  </message>
+  <message name="getResponseResponse">
+    <part name="parameters" element="tns:getResponseResponse" />
+  </message>
+  <message name="WSObjectNotFoundException">
+    <part xmlns:ns1="http://v81.api.keysurvey.com" name="fault" element="ns1:WSObjectNotFoundException" />
+  </message>
+  <message name="WSInternalServerException">
+    <part xmlns:ns2="http://v81.api.keysurvey.com" name="fault" element="ns2:WSInternalServerException" />
+  </message>
+  <message name="WSIllegalArgumentException">
+    <part xmlns:ns3="http://v81.api.keysurvey.com" name="fault" element="ns3:WSIllegalArgumentException" />
+  </message>
+  <message name="WSSecurityException">
+    <part xmlns:ns4="http://v81.api.keysurvey.com" name="fault" element="ns4:WSSecurityException" />
+  </message>
+  <message name="deleteRespondent">
+    <part name="parameters" element="tns:deleteRespondent" />
+  </message>
+  <message name="deleteRespondentResponse">
+    <part name="parameters" element="tns:deleteRespondentResponse" />
+  </message>
+  <message name="saveAnswerResponse">
+    <part name="parameters" element="tns:saveAnswerResponse" />
+  </message>
+  <message name="saveAnswerResponseResponse">
+    <part name="parameters" element="tns:saveAnswerResponseResponse" />
+  </message>
+  <message name="saveResponses">
+    <part name="parameters" element="tns:saveResponses" />
+  </message>
+  <message name="saveResponsesResponse">
+    <part name="parameters" element="tns:saveResponsesResponse" />
+  </message>
+  <message name="updateRespondents">
+    <part name="parameters" element="tns:updateRespondents" />
+  </message>
+  <message name="updateRespondentsResponse">
+    <part name="parameters" element="tns:updateRespondentsResponse" />
+  </message>
+  <message name="deleteRespondents">
+    <part name="parameters" element="tns:deleteRespondents" />
+  </message>
+  <message name="deleteRespondentsResponse">
+    <part name="parameters" element="tns:deleteRespondentsResponse" />
+  </message>
+  <message name="getResponses">
+    <part name="parameters" element="tns:getResponses" />
+  </message>
+  <message name="getResponsesResponse">
+    <part name="parameters" element="tns:getResponsesResponse" />
+  </message>
+  <message name="reassignResponse">
+    <part name="parameters" element="tns:reassignResponse" />
+  </message>
+  <message name="reassignResponseResponse">
+    <part name="parameters" element="tns:reassignResponseResponse" />
+  </message>
+  <message name="createPortalRespondent">
+    <part name="parameters" element="tns:createPortalRespondent" />
+  </message>
+  <message name="createPortalRespondentResponse">
+    <part name="parameters" element="tns:createPortalRespondentResponse" />
+  </message>
+  <message name="getRespondent">
+    <part name="parameters" element="tns:getRespondent" />
+  </message>
+  <message name="getRespondentResponse">
+    <part name="parameters" element="tns:getRespondentResponse" />
+  </message>
+  <message name="getRespondents">
+    <part name="parameters" element="tns:getRespondents" />
+  </message>
+  <message name="getRespondentsResponse">
+    <part name="parameters" element="tns:getRespondentsResponse" />
+  </message>
+  <message name="deleteRespondentsByActivityDate">
+    <part name="parameters" element="tns:deleteRespondentsByActivityDate" />
+  </message>
+  <message name="deleteRespondentsByActivityDateResponse">
+    <part name="parameters" element="tns:deleteRespondentsByActivityDateResponse" />
+  </message>
+  <message name="deleteRespondentsByLaunchDate">
+    <part name="parameters" element="tns:deleteRespondentsByLaunchDate" />
+  </message>
+  <message name="deleteRespondentsByLaunchDateResponse">
+    <part name="parameters" element="tns:deleteRespondentsByLaunchDateResponse" />
+  </message>
+  <message name="getRespondentsByCriteriaWithIncompletes">
+    <part name="parameters" element="tns:getRespondentsByCriteriaWithIncompletes" />
+  </message>
+  <message name="getRespondentsByCriteriaWithIncompletesResponse">
+    <part name="parameters" element="tns:getRespondentsByCriteriaWithIncompletesResponse" />
+  </message>
+  <message name="getRespondentsComplete">
+    <part name="parameters" element="tns:getRespondentsComplete" />
+  </message>
+  <message name="getRespondentsCompleteResponse">
+    <part name="parameters" element="tns:getRespondentsCompleteResponse" />
+  </message>
+  <message name="getRespondentsByCriteria">
+    <part name="parameters" element="tns:getRespondentsByCriteria" />
+  </message>
+  <message name="getRespondentsByCriteriaResponse">
+    <part name="parameters" element="tns:getRespondentsByCriteriaResponse" />
+  </message>
+  <message name="getRespondentsByEmail">
+    <part name="parameters" element="tns:getRespondentsByEmail" />
+  </message>
+  <message name="getRespondentsByEmailResponse">
+    <part name="parameters" element="tns:getRespondentsByEmailResponse" />
+  </message>
+  <message name="deleteRespondentsByEmail">
+    <part name="parameters" element="tns:deleteRespondentsByEmail" />
+  </message>
+  <message name="deleteRespondentsByEmailResponse">
+    <part name="parameters" element="tns:deleteRespondentsByEmailResponse" />
+  </message>
+  <message name="getFormStatistics">
+    <part name="parameters" element="tns:getFormStatistics" />
+  </message>
+  <message name="getFormStatisticsResponse">
+    <part name="parameters" element="tns:getFormStatisticsResponse" />
+  </message>
+  <message name="getRespondentsPartial">
+    <part name="parameters" element="tns:getRespondentsPartial" />
+  </message>
+  <message name="getRespondentsPartialResponse">
+    <part name="parameters" element="tns:getRespondentsPartialResponse" />
+  </message>
+  <message name="copyRespondent">
+    <part name="parameters" element="tns:copyRespondent" />
+  </message>
+  <message name="copyRespondentResponse">
+    <part name="parameters" element="tns:copyRespondentResponse" />
+  </message>
+  <message name="getResponsesWithFiles">
+    <part name="parameters" element="tns:getResponsesWithFiles" />
+  </message>
+  <message name="getResponsesWithFilesResponse">
+    <part name="parameters" element="tns:getResponsesWithFilesResponse" />
+  </message>
+  <message name="getResponseWithFiles">
+    <part name="parameters" element="tns:getResponseWithFiles" />
+  </message>
+  <message name="getResponseWithFilesResponse">
+    <part name="parameters" element="tns:getResponseWithFilesResponse" />
+  </message>
+  <message name="createRespondents">
+    <part name="parameters" element="tns:createRespondents" />
+  </message>
+  <message name="createRespondentsResponse">
+    <part name="parameters" element="tns:createRespondentsResponse" />
+  </message>
+  <portType name="FormResultManagementService">
+    <operation name="getResponse">
+      <input message="tns:getResponse" />
+      <output message="tns:getResponseResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="deleteRespondent">
+      <input message="tns:deleteRespondent" />
+      <output message="tns:deleteRespondentResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="saveAnswerResponse">
+      <input message="tns:saveAnswerResponse" />
+      <output message="tns:saveAnswerResponseResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="saveResponses">
+      <input message="tns:saveResponses" />
+      <output message="tns:saveResponsesResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="updateRespondents">
+      <input message="tns:updateRespondents" />
+      <output message="tns:updateRespondentsResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="deleteRespondents">
+      <input message="tns:deleteRespondents" />
+      <output message="tns:deleteRespondentsResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="getResponses">
+      <input message="tns:getResponses" />
+      <output message="tns:getResponsesResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="reassignResponse">
+      <input message="tns:reassignResponse" />
+      <output message="tns:reassignResponseResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="createPortalRespondent">
+      <input message="tns:createPortalRespondent" />
+      <output message="tns:createPortalRespondentResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="getRespondent">
+      <input message="tns:getRespondent" />
+      <output message="tns:getRespondentResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="getRespondents">
+      <input message="tns:getRespondents" />
+      <output message="tns:getRespondentsResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="deleteRespondentsByActivityDate">
+      <input message="tns:deleteRespondentsByActivityDate" />
+      <output message="tns:deleteRespondentsByActivityDateResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="deleteRespondentsByLaunchDate">
+      <input message="tns:deleteRespondentsByLaunchDate" />
+      <output message="tns:deleteRespondentsByLaunchDateResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getRespondentsByCriteriaWithIncompletes">
+      <input message="tns:getRespondentsByCriteriaWithIncompletes" />
+      <output message="tns:getRespondentsByCriteriaWithIncompletesResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="getRespondentsComplete">
+      <input message="tns:getRespondentsComplete" />
+      <output message="tns:getRespondentsCompleteResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="getRespondentsByCriteria">
+      <input message="tns:getRespondentsByCriteria" />
+      <output message="tns:getRespondentsByCriteriaResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="getRespondentsByEmail">
+      <input message="tns:getRespondentsByEmail" />
+      <output message="tns:getRespondentsByEmailResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="deleteRespondentsByEmail">
+      <input message="tns:deleteRespondentsByEmail" />
+      <output message="tns:deleteRespondentsByEmailResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getFormStatistics">
+      <input message="tns:getFormStatistics" />
+      <output message="tns:getFormStatisticsResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="getRespondentsPartial">
+      <input message="tns:getRespondentsPartial" />
+      <output message="tns:getRespondentsPartialResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="copyRespondent">
+      <input message="tns:copyRespondent" />
+      <output message="tns:copyRespondentResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getResponsesWithFiles">
+      <input message="tns:getResponsesWithFiles" />
+      <output message="tns:getResponsesWithFilesResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="getResponseWithFiles">
+      <input message="tns:getResponseWithFiles" />
+      <output message="tns:getResponseWithFilesResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="createRespondents">
+      <input message="tns:createRespondents" />
+      <output message="tns:createRespondentsResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+  </portType>
+  <binding name="FormResultManagementServicePortBinding" type="tns:FormResultManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getResponse">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteRespondent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="saveAnswerResponse">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="saveResponses">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="updateRespondents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteRespondents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getResponses">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="reassignResponse">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createPortalRespondent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteRespondentsByActivityDate">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteRespondentsByLaunchDate">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondentsByCriteriaWithIncompletes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondentsComplete">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondentsByCriteria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondentsByEmail">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteRespondentsByEmail">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFormStatistics">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getRespondentsPartial">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="copyRespondent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getResponsesWithFiles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getResponseWithFiles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createRespondents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="FormResultManagement">
+    <port name="FormResultManagementServicePort" binding="tns:FormResultManagementServicePortBinding">
+      <soap:address location="http://app.form.com:80/Member/api/v81/form/result/FormResultManagementService" />
+    </port>
+  </service>
+</definitions>

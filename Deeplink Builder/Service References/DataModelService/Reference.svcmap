@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7dcfe2c7-0608-4f68-8751-ea9cdbda95c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://app.form.com/Member/api/v81/model/DataModelsService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataModelManagement.wsdl" MetadataType="Wsdl" ID="f47e1fb5-0776-49d2-9764-be7e987a41b4" SourceId="1" SourceUrl="http://app.form.com/Member/api/v81/model/DataModelsService?wsdl" />
+    <MetadataFile FileName="DataModelsService.xsd" MetadataType="Schema" ID="a5b967cc-2491-4d8b-bc3d-e59b11c842cb" SourceId="1" SourceUrl="http://app.form.com/Member/api/v81/model/DataModelsService?xsd=1" />
+    <MetadataFile FileName="DataModelsService1.xsd" MetadataType="Schema" ID="5b58b558-1bd7-48a6-860c-8a80b720313f" SourceId="1" SourceUrl="http://app.form.com/Member/api/v81/model/DataModelsService?xsd=2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

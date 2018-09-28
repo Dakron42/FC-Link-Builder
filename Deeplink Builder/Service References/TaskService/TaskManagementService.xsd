@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tasks.v81.api.keysurvey.com" xmlns:ns1="http://v81.api.keysurvey.com" xmlns:swaRef="http://ws-i.org/profiles/basic/1.1/xsd" targetNamespace="http://tasks.v81.api.keysurvey.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://app.form.com:80/Member/api/v81/task/TaskManagementService?xsd=1" namespace="http://v81.api.keysurvey.com" />
+  <xs:import schemaLocation="http://ws-i.org/profiles/basic/1.1/swaref.xsd" namespace="http://ws-i.org/profiles/basic/1.1/xsd" />
+  <xs:element name="assignTask" type="tns:assignTask" />
+  <xs:element name="assignTaskResponse" type="tns:assignTaskResponse" />
+  <xs:element name="changeTaskData" type="tns:changeTaskData" />
+  <xs:element name="changeTaskDataResponse" type="tns:changeTaskDataResponse" />
+  <xs:element name="changeTaskDueDate" type="tns:changeTaskDueDate" />
+  <xs:element name="changeTaskDueDateResponse" type="tns:changeTaskDueDateResponse" />
+  <xs:element name="changeTaskStatus" type="tns:changeTaskStatus" />
+  <xs:element name="changeTaskStatusResponse" type="tns:changeTaskStatusResponse" />
+  <xs:element name="createTask" type="tns:createTask" />
+  <xs:element name="createTaskResponse" type="tns:createTaskResponse" />
+  <xs:element name="createTaskWithResponses" type="tns:createTaskWithResponses" />
+  <xs:element name="createTaskWithResponsesResponse" type="tns:createTaskWithResponsesResponse" />
+  <xs:element name="deleteTask" type="tns:deleteTask" />
+  <xs:element name="deleteTaskResponse" type="tns:deleteTaskResponse" />
+  <xs:element name="getContacts" type="tns:getContacts" />
+  <xs:element name="getContactsResponse" type="tns:getContactsResponse" />
+  <xs:element name="getDefaultStatus" type="tns:getDefaultStatus" />
+  <xs:element name="getDefaultStatusResponse" type="tns:getDefaultStatusResponse" />
+  <xs:element name="getTaskDefinitions" type="tns:getTaskDefinitions" />
+  <xs:element name="getTaskDefinitionsResponse" type="tns:getTaskDefinitionsResponse" />
+  <xs:element name="getTasks" type="tns:getTasks" />
+  <xs:element name="getTasksByRespondent" type="tns:getTasksByRespondent" />
+  <xs:element name="getTasksByRespondentResponse" type="tns:getTasksByRespondentResponse" />
+  <xs:element name="getTasksResponse" type="tns:getTasksResponse" />
+  <xs:element name="wsAnswerFileUploadResponse" type="tns:WSAnswerFileUploadResponse" />
+  <xs:element name="wsAnswerMatrixOptionResponse" type="tns:WSAnswerMatrixOptionResponse" />
+  <xs:element name="wsAnswerMatrixResponse" type="tns:WSAnswerMatrixResponse" />
+  <xs:element name="wsAnswerMatrixTextResponse" type="tns:WSAnswerMatrixTextResponse" />
+  <xs:element name="wsAnswerPickResponse" type="tns:WSAnswerPickResponse" />
+  <xs:element name="wsAnswerResponse" type="tns:WSAnswerResponse" />
+  <xs:element name="wsAnswerTextResponse" type="tns:WSAnswerTextResponse" />
+  <xs:element name="wsContact" type="tns:WSContact" />
+  <xs:element name="wsContactStatistics" type="tns:WSContactStatistics" />
+  <xs:element name="wsContactStatus" type="tns:WSContactStatus" />
+  <xs:element name="wsModelObject" type="tns:WSModelObject" />
+  <xs:element name="wsQuestionResponse" type="tns:WSQuestionResponse" />
+  <xs:element name="wsRespondent" type="tns:WSRespondent" />
+  <xs:element name="wsRespondentStatus" type="tns:WSRespondentStatus" />
+  <xs:complexType name="getDefaultStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskDefId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDefaultStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSTaskStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSTaskStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element name="answerId" type="xs:long" />
+          <xs:element name="closing" type="xs:boolean" />
+          <xs:element name="default" type="xs:boolean" />
+          <xs:element name="position" type="xs:long" />
+          <xs:element name="taskStatusId" type="xs:long" />
+          <xs:element minOccurs="0" name="title" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getTaskDefinitions">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getTaskDefinitionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSTaskDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSTaskDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+          <xs:element minOccurs="0" name="defaultStatus" type="tns:WSTaskStatus" />
+          <xs:element minOccurs="0" name="formId" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="tns:WSTaskProperty" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="statuses" nillable="true" type="tns:WSTaskStatus" />
+          <xs:element name="taskDefinitionId" type="xs:long" />
+          <xs:element minOccurs="0" name="title" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSTaskProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="answerId" type="xs:long" />
+          <xs:element name="filetered" type="xs:boolean" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element name="order" type="xs:int" />
+          <xs:element name="taskPropertyId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskDefId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSContact">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModelObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statistics" type="tns:WSContactStatistics" />
+          <xs:element minOccurs="0" name="userId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSModelObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="keyFieldName" type="xs:string" />
+      <xs:element name="properties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string" />
+                  <xs:element minOccurs="0" name="value" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSContactStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateLastActivity" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateLastFinished" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateLastInvited" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateLastStarted" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="maxPoints" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numFormsFinished" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numFormsInvitedTo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numFormsStarted" type="xs:decimal" />
+      <xs:element minOccurs="0" name="points" type="xs:decimal" />
+      <xs:element minOccurs="0" name="score" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" type="tns:WSContactStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeTaskData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskId" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="responces" type="tns:WSQuestionResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSQuestionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="answerResponses" nillable="true" type="tns:WSAnswerResponse" />
+          <xs:element name="questionId" type="xs:long" />
+          <xs:element name="respondentId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element name="answerId" type="xs:long" />
+          <xs:element name="respondentId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerTextResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSAnswerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="text" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerPickResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSAnswerResponse">
+        <xs:sequence>
+          <xs:element name="value" type="xs:long" />
+          <xs:element name="weight" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerMatrixResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSAnswerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="patternColumnIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerMatrixOptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSAnswerMatrixResponse">
+        <xs:sequence>
+          <xs:element name="responseIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerMatrixTextResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSAnswerMatrixResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="response" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSAnswerFileUploadResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSAnswerTextResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contentType" type="xs:string" />
+          <xs:element name="fileSize" type="xs:long" />
+          <xs:element minOccurs="0" name="imageDrawing" type="xs:string" />
+          <xs:element minOccurs="0" name="loadedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="uploadFile" type="swaRef:swaRef" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="changeTaskDataResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="deleteTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteTaskResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskDefId" type="xs:long" />
+      <xs:element minOccurs="0" name="task" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contact" type="tns:WSContact" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element name="createdBy" type="xs:long" />
+          <xs:element minOccurs="0" name="description" type="xs:string" />
+          <xs:element minOccurs="0" name="dueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="respondent" type="tns:WSRespondent" />
+          <xs:element minOccurs="0" name="status" type="tns:WSTaskStatus" />
+          <xs:element minOccurs="0" name="summary" type="xs:string" />
+          <xs:element name="taskId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSRespondent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:WSObject">
+        <xs:sequence>
+          <xs:element name="anonym" type="xs:boolean" />
+          <xs:element minOccurs="0" name="code" type="xs:string" />
+          <xs:element name="deleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element name="formId" type="xs:long" />
+          <xs:element minOccurs="0" name="ipAddress" type="xs:string" />
+          <xs:element name="launchDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="reportLink" type="xs:string" />
+          <xs:element name="respondentId" type="xs:long" />
+          <xs:element name="resubmit" type="xs:boolean" />
+          <xs:element name="score" type="xs:double" />
+          <xs:element minOccurs="0" name="status" type="tns:WSRespondentStatus" />
+          <xs:element name="submitDate" type="xs:dateTime" />
+          <xs:element name="submitStartDate" type="xs:dateTime" />
+          <xs:element name="test" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="createTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createTaskWithResponses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskDefId" type="xs:long" />
+      <xs:element minOccurs="0" name="task" type="tns:WSTask" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="responces" type="tns:WSQuestionResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createTaskWithResponsesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTasks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskDefId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTasksResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeTaskStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskId" type="xs:long" />
+      <xs:element minOccurs="0" name="taskStatusId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeTaskStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeTaskDueDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskId" type="xs:long" />
+      <xs:element minOccurs="0" name="dueDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeTaskDueDateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="assignTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="assignTaskResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getTasksByRespondent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="taskDefId" type="xs:long" />
+      <xs:element minOccurs="0" name="respondentId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTasksByRespondentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="WSContactStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE" />
+      <xs:enumeration value="NOT_ACTIVE" />
+      <xs:enumeration value="OPT_OUT" />
+      <xs:enumeration value="INVALID_EMAIL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WSRespondentStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INCOMPLETE" />
+      <xs:enumeration value="COMPLETE" />
+      <xs:enumeration value="COMPLETE_MAIL" />
+      <xs:enumeration value="ABANDONE_MAIL" />
+      <xs:enumeration value="NOT_STARTED" />
+      <xs:enumeration value="ALL" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://contact.v81.api.keysurvey.com" name="ContactsManagementService" targetNamespace="http://contact.v81.api.keysurvey.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/contact/ContactsManagementService?xsd=1" namespace="http://v81.api.keysurvey.com" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/contact/ContactsManagementService?xsd=2" namespace="http://contact.v81.api.keysurvey.com" />
+    </xsd:schema>
+  </types>
+  <message name="getFilter">
+    <part name="parameters" element="tns:getFilter" />
+  </message>
+  <message name="getFilterResponse">
+    <part name="parameters" element="tns:getFilterResponse" />
+  </message>
+  <message name="createFilter">
+    <part name="parameters" element="tns:createFilter" />
+  </message>
+  <message name="createFilterResponse">
+    <part name="parameters" element="tns:createFilterResponse" />
+  </message>
+  <message name="WSIllegalArgumentException">
+    <part xmlns:ns1="http://v81.api.keysurvey.com" name="fault" element="ns1:WSIllegalArgumentException" />
+  </message>
+  <message name="WSCMDoesNotExistException">
+    <part xmlns:ns2="http://v81.api.keysurvey.com" name="fault" element="ns2:WSCMDoesNotExistException" />
+  </message>
+  <message name="updateLaunchFilter">
+    <part name="parameters" element="tns:updateLaunchFilter" />
+  </message>
+  <message name="updateLaunchFilterResponse">
+    <part name="parameters" element="tns:updateLaunchFilterResponse" />
+  </message>
+  <message name="WSSecurityException">
+    <part xmlns:ns3="http://v81.api.keysurvey.com" name="fault" element="ns3:WSSecurityException" />
+  </message>
+  <message name="WSObjectNotFoundException">
+    <part xmlns:ns4="http://v81.api.keysurvey.com" name="fault" element="ns4:WSObjectNotFoundException" />
+  </message>
+  <message name="getFilters">
+    <part name="parameters" element="tns:getFilters" />
+  </message>
+  <message name="getFiltersResponse">
+    <part name="parameters" element="tns:getFiltersResponse" />
+  </message>
+  <message name="createLaunchFilter">
+    <part name="parameters" element="tns:createLaunchFilter" />
+  </message>
+  <message name="createLaunchFilterResponse">
+    <part name="parameters" element="tns:createLaunchFilterResponse" />
+  </message>
+  <message name="getContactManagerById">
+    <part name="parameters" element="tns:getContactManagerById" />
+  </message>
+  <message name="getContactManagerByIdResponse">
+    <part name="parameters" element="tns:getContactManagerByIdResponse" />
+  </message>
+  <message name="renameContactManager">
+    <part name="parameters" element="tns:renameContactManager" />
+  </message>
+  <message name="renameContactManagerResponse">
+    <part name="parameters" element="tns:renameContactManagerResponse" />
+  </message>
+  <message name="createContactManager">
+    <part name="parameters" element="tns:createContactManager" />
+  </message>
+  <message name="createContactManagerResponse">
+    <part name="parameters" element="tns:createContactManagerResponse" />
+  </message>
+  <message name="requirePasswordChange">
+    <part name="parameters" element="tns:requirePasswordChange" />
+  </message>
+  <message name="requirePasswordChangeResponse">
+    <part name="parameters" element="tns:requirePasswordChangeResponse" />
+  </message>
+  <message name="resetContactPassword">
+    <part name="parameters" element="tns:resetContactPassword" />
+  </message>
+  <message name="resetContactPasswordResponse">
+    <part name="parameters" element="tns:resetContactPasswordResponse" />
+  </message>
+  <message name="unlockContact">
+    <part name="parameters" element="tns:unlockContact" />
+  </message>
+  <message name="unlockContactResponse">
+    <part name="parameters" element="tns:unlockContactResponse" />
+  </message>
+  <message name="lockContact">
+    <part name="parameters" element="tns:lockContact" />
+  </message>
+  <message name="lockContactResponse">
+    <part name="parameters" element="tns:lockContactResponse" />
+  </message>
+  <message name="editContact">
+    <part name="parameters" element="tns:editContact" />
+  </message>
+  <message name="editContactResponse">
+    <part name="parameters" element="tns:editContactResponse" />
+  </message>
+  <message name="deleteContact">
+    <part name="parameters" element="tns:deleteContact" />
+  </message>
+  <message name="deleteContactResponse">
+    <part name="parameters" element="tns:deleteContactResponse" />
+  </message>
+  <message name="addContacts">
+    <part name="parameters" element="tns:addContacts" />
+  </message>
+  <message name="addContactsResponse">
+    <part name="parameters" element="tns:addContactsResponse" />
+  </message>
+  <message name="addContact">
+    <part name="parameters" element="tns:addContact" />
+  </message>
+  <message name="addContactResponse">
+    <part name="parameters" element="tns:addContactResponse" />
+  </message>
+  <message name="getFilteredContacts">
+    <part name="parameters" element="tns:getFilteredContacts" />
+  </message>
+  <message name="getFilteredContactsResponse">
+    <part name="parameters" element="tns:getFilteredContactsResponse" />
+  </message>
+  <message name="getContactByFilter">
+    <part name="parameters" element="tns:getContactByFilter" />
+  </message>
+  <message name="getContactByFilterResponse">
+    <part name="parameters" element="tns:getContactByFilterResponse" />
+  </message>
+  <message name="deleteFilter">
+    <part name="parameters" element="tns:deleteFilter" />
+  </message>
+  <message name="deleteFilterResponse">
+    <part name="parameters" element="tns:deleteFilterResponse" />
+  </message>
+  <message name="setKeyField">
+    <part name="parameters" element="tns:setKeyField" />
+  </message>
+  <message name="setKeyFieldResponse">
+    <part name="parameters" element="tns:setKeyFieldResponse" />
+  </message>
+  <message name="getLaunchedSurveyFilter">
+    <part name="parameters" element="tns:getLaunchedSurveyFilter" />
+  </message>
+  <message name="getLaunchedSurveyFilterResponse">
+    <part name="parameters" element="tns:getLaunchedSurveyFilterResponse" />
+  </message>
+  <message name="listContactManagers">
+    <part name="parameters" element="tns:listContactManagers" />
+  </message>
+  <message name="listContactManagersResponse">
+    <part name="parameters" element="tns:listContactManagersResponse" />
+  </message>
+  <message name="getLaunchFilter">
+    <part name="parameters" element="tns:getLaunchFilter" />
+  </message>
+  <message name="getLaunchFilterResponse">
+    <part name="parameters" element="tns:getLaunchFilterResponse" />
+  </message>
+  <portType name="ContactsManagementService">
+    <operation name="getFilter">
+      <input message="tns:getFilter" />
+      <output message="tns:getFilterResponse" />
+    </operation>
+    <operation name="createFilter">
+      <input message="tns:createFilter" />
+      <output message="tns:createFilterResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="updateLaunchFilter">
+      <input message="tns:updateLaunchFilter" />
+      <output message="tns:updateLaunchFilterResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="getFilters">
+      <input message="tns:getFilters" />
+      <output message="tns:getFiltersResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="createLaunchFilter">
+      <input message="tns:createLaunchFilter" />
+      <output message="tns:createLaunchFilterResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="getContactManagerById">
+      <input message="tns:getContactManagerById" />
+      <output message="tns:getContactManagerByIdResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="renameContactManager">
+      <input message="tns:renameContactManager" />
+      <output message="tns:renameContactManagerResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="createContactManager">
+      <input message="tns:createContactManager" />
+      <output message="tns:createContactManagerResponse" />
+    </operation>
+    <operation name="requirePasswordChange">
+      <input message="tns:requirePasswordChange" />
+      <output message="tns:requirePasswordChangeResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="resetContactPassword">
+      <input message="tns:resetContactPassword" />
+      <output message="tns:resetContactPasswordResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="unlockContact">
+      <input message="tns:unlockContact" />
+      <output message="tns:unlockContactResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="lockContact">
+      <input message="tns:lockContact" />
+      <output message="tns:lockContactResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="editContact">
+      <input message="tns:editContact" />
+      <output message="tns:editContactResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="deleteContact">
+      <input message="tns:deleteContact" />
+      <output message="tns:deleteContactResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="addContacts">
+      <input message="tns:addContacts" />
+      <output message="tns:addContactsResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="addContact">
+      <input message="tns:addContact" />
+      <output message="tns:addContactResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="getFilteredContacts">
+      <input message="tns:getFilteredContacts" />
+      <output message="tns:getFilteredContactsResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="getContactByFilter">
+      <input message="tns:getContactByFilter" />
+      <output message="tns:getContactByFilterResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="deleteFilter">
+      <input message="tns:deleteFilter" />
+      <output message="tns:deleteFilterResponse" />
+    </operation>
+    <operation name="setKeyField">
+      <input message="tns:setKeyField" />
+      <output message="tns:setKeyFieldResponse" />
+      <fault name="WSCMDoesNotExistException" message="tns:WSCMDoesNotExistException" />
+    </operation>
+    <operation name="getLaunchedSurveyFilter">
+      <input message="tns:getLaunchedSurveyFilter" />
+      <output message="tns:getLaunchedSurveyFilterResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="listContactManagers">
+      <input message="tns:listContactManagers" />
+      <output message="tns:listContactManagersResponse" />
+    </operation>
+    <operation name="getLaunchFilter">
+      <input message="tns:getLaunchFilter" />
+      <output message="tns:getLaunchFilterResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+  </portType>
+  <binding name="ContactsManagementServicePortBinding" type="tns:ContactsManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="createFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="updateLaunchFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFilters">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createLaunchFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getContactManagerById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="renameContactManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createContactManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requirePasswordChange">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="resetContactPassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="unlockContact">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="lockContact">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="editContact">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteContact">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addContacts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addContact">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFilteredContacts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getContactByFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="setKeyField">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSCMDoesNotExistException">
+        <soap:fault use="literal" name="WSCMDoesNotExistException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getLaunchedSurveyFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="listContactManagers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getLaunchFilter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="ContactsManagementService">
+    <port name="ContactsManagementServicePort" binding="tns:ContactsManagementServicePortBinding">
+      <soap:address location="http://app.form.com:80/Member/api/v81/contact/ContactsManagementService" />
+    </port>
+  </service>
+</definitions>

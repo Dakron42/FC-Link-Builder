@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tasks.v81.api.keysurvey.com" name="TaskManagementService" targetNamespace="http://tasks.v81.api.keysurvey.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/task/TaskManagementService?xsd=1" namespace="http://v81.api.keysurvey.com" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://app.form.com:80/Member/api/v81/task/TaskManagementService?xsd=2" namespace="http://tasks.v81.api.keysurvey.com" />
+    </xsd:schema>
+  </types>
+  <message name="getDefaultStatus">
+    <part name="parameters" element="tns:getDefaultStatus" />
+  </message>
+  <message name="getDefaultStatusResponse">
+    <part name="parameters" element="tns:getDefaultStatusResponse" />
+  </message>
+  <message name="WSSecurityException">
+    <part xmlns:ns1="http://v81.api.keysurvey.com" name="fault" element="ns1:WSSecurityException" />
+  </message>
+  <message name="getTasks">
+    <part name="parameters" element="tns:getTasks" />
+  </message>
+  <message name="getTasksResponse">
+    <part name="parameters" element="tns:getTasksResponse" />
+  </message>
+  <message name="WSObjectNotFoundException">
+    <part xmlns:ns2="http://v81.api.keysurvey.com" name="fault" element="ns2:WSObjectNotFoundException" />
+  </message>
+  <message name="getContacts">
+    <part name="parameters" element="tns:getContacts" />
+  </message>
+  <message name="getContactsResponse">
+    <part name="parameters" element="tns:getContactsResponse" />
+  </message>
+  <message name="getTaskDefinitions">
+    <part name="parameters" element="tns:getTaskDefinitions" />
+  </message>
+  <message name="getTaskDefinitionsResponse">
+    <part name="parameters" element="tns:getTaskDefinitionsResponse" />
+  </message>
+  <message name="deleteTask">
+    <part name="parameters" element="tns:deleteTask" />
+  </message>
+  <message name="deleteTaskResponse">
+    <part name="parameters" element="tns:deleteTaskResponse" />
+  </message>
+  <message name="WSIllegalArgumentException">
+    <part xmlns:ns3="http://v81.api.keysurvey.com" name="fault" element="ns3:WSIllegalArgumentException" />
+  </message>
+  <message name="changeTaskDueDate">
+    <part name="parameters" element="tns:changeTaskDueDate" />
+  </message>
+  <message name="changeTaskDueDateResponse">
+    <part name="parameters" element="tns:changeTaskDueDateResponse" />
+  </message>
+  <message name="changeTaskStatus">
+    <part name="parameters" element="tns:changeTaskStatus" />
+  </message>
+  <message name="changeTaskStatusResponse">
+    <part name="parameters" element="tns:changeTaskStatusResponse" />
+  </message>
+  <message name="assignTask">
+    <part name="parameters" element="tns:assignTask" />
+  </message>
+  <message name="assignTaskResponse">
+    <part name="parameters" element="tns:assignTaskResponse" />
+  </message>
+  <message name="getTasksByRespondent">
+    <part name="parameters" element="tns:getTasksByRespondent" />
+  </message>
+  <message name="getTasksByRespondentResponse">
+    <part name="parameters" element="tns:getTasksByRespondentResponse" />
+  </message>
+  <message name="createTaskWithResponses">
+    <part name="parameters" element="tns:createTaskWithResponses" />
+  </message>
+  <message name="createTaskWithResponsesResponse">
+    <part name="parameters" element="tns:createTaskWithResponsesResponse" />
+  </message>
+  <message name="WSInternalServerException">
+    <part xmlns:ns4="http://v81.api.keysurvey.com" name="fault" element="ns4:WSInternalServerException" />
+  </message>
+  <message name="createTask">
+    <part name="parameters" element="tns:createTask" />
+  </message>
+  <message name="createTaskResponse">
+    <part name="parameters" element="tns:createTaskResponse" />
+  </message>
+  <message name="changeTaskData">
+    <part name="parameters" element="tns:changeTaskData" />
+  </message>
+  <message name="changeTaskDataResponse">
+    <part name="parameters" element="tns:changeTaskDataResponse" />
+  </message>
+  <portType name="TaskManagementService">
+    <operation name="getDefaultStatus">
+      <input message="tns:getDefaultStatus" />
+      <output message="tns:getDefaultStatusResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="getTasks">
+      <input message="tns:getTasks" />
+      <output message="tns:getTasksResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="getContacts">
+      <input message="tns:getContacts" />
+      <output message="tns:getContactsResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="getTaskDefinitions">
+      <input message="tns:getTaskDefinitions" />
+      <output message="tns:getTaskDefinitionsResponse" />
+    </operation>
+    <operation name="deleteTask">
+      <input message="tns:deleteTask" />
+      <output message="tns:deleteTaskResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="changeTaskDueDate">
+      <input message="tns:changeTaskDueDate" />
+      <output message="tns:changeTaskDueDateResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="changeTaskStatus">
+      <input message="tns:changeTaskStatus" />
+      <output message="tns:changeTaskStatusResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+    </operation>
+    <operation name="assignTask">
+      <input message="tns:assignTask" />
+      <output message="tns:assignTaskResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+    <operation name="getTasksByRespondent">
+      <input message="tns:getTasksByRespondent" />
+      <output message="tns:getTasksByRespondentResponse" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+    </operation>
+    <operation name="createTaskWithResponses">
+      <input message="tns:createTaskWithResponses" />
+      <output message="tns:createTaskWithResponsesResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="createTask">
+      <input message="tns:createTask" />
+      <output message="tns:createTaskResponse" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+    </operation>
+    <operation name="changeTaskData">
+      <input message="tns:changeTaskData" />
+      <output message="tns:changeTaskDataResponse" />
+      <fault name="WSSecurityException" message="tns:WSSecurityException" />
+      <fault name="WSIllegalArgumentException" message="tns:WSIllegalArgumentException" />
+      <fault name="WSInternalServerException" message="tns:WSInternalServerException" />
+      <fault name="WSObjectNotFoundException" message="tns:WSObjectNotFoundException" />
+    </operation>
+  </portType>
+  <binding name="TaskManagementServicePortBinding" type="tns:TaskManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getDefaultStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getTasks">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getContacts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getTaskDefinitions">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteTask">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="changeTaskDueDate">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="changeTaskStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="assignTask">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getTasksByRespondent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createTaskWithResponses">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="createTask">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="changeTaskData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSSecurityException">
+        <soap:fault use="literal" name="WSSecurityException" namespace="" />
+      </fault>
+      <fault name="WSIllegalArgumentException">
+        <soap:fault use="literal" name="WSIllegalArgumentException" namespace="" />
+      </fault>
+      <fault name="WSInternalServerException">
+        <soap:fault use="literal" name="WSInternalServerException" namespace="" />
+      </fault>
+      <fault name="WSObjectNotFoundException">
+        <soap:fault use="literal" name="WSObjectNotFoundException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="TaskManagementService">
+    <port name="TaskManagementServicePort" binding="tns:TaskManagementServicePortBinding">
+      <soap:address location="http://app.form.com:80/Member/api/v81/task/TaskManagementService" />
+    </port>
+  </service>
+</definitions>

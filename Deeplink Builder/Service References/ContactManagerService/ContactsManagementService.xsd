@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://contact.v81.api.keysurvey.com" targetNamespace="http://contact.v81.api.keysurvey.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addContact" type="tns:addContact" />
+  <xs:element name="addContactResponse" type="tns:addContactResponse" />
+  <xs:element name="addContacts" type="tns:addContacts" />
+  <xs:element name="addContactsResponse" type="tns:addContactsResponse" />
+  <xs:element name="createContactManager" type="tns:createContactManager" />
+  <xs:element name="createContactManagerResponse" type="tns:createContactManagerResponse" />
+  <xs:element name="createFilter" type="tns:createFilter" />
+  <xs:element name="createFilterResponse" type="tns:createFilterResponse" />
+  <xs:element name="createLaunchFilter" type="tns:createLaunchFilter" />
+  <xs:element name="createLaunchFilterResponse" type="tns:createLaunchFilterResponse" />
+  <xs:element name="deleteContact" type="tns:deleteContact" />
+  <xs:element name="deleteContactResponse" type="tns:deleteContactResponse" />
+  <xs:element name="deleteFilter" type="tns:deleteFilter" />
+  <xs:element name="deleteFilterResponse" type="tns:deleteFilterResponse" />
+  <xs:element name="editContact" type="tns:editContact" />
+  <xs:element name="editContactResponse" type="tns:editContactResponse" />
+  <xs:element name="getContactByFilter" type="tns:getContactByFilter" />
+  <xs:element name="getContactByFilterResponse" type="tns:getContactByFilterResponse" />
+  <xs:element name="getContactManagerById" type="tns:getContactManagerById" />
+  <xs:element name="getContactManagerByIdResponse" type="tns:getContactManagerByIdResponse" />
+  <xs:element name="getFilter" type="tns:getFilter" />
+  <xs:element name="getFilterResponse" type="tns:getFilterResponse" />
+  <xs:element name="getFilteredContacts" type="tns:getFilteredContacts" />
+  <xs:element name="getFilteredContactsResponse" type="tns:getFilteredContactsResponse" />
+  <xs:element name="getFilters" type="tns:getFilters" />
+  <xs:element name="getFiltersResponse" type="tns:getFiltersResponse" />
+  <xs:element name="getLaunchFilter" type="tns:getLaunchFilter" />
+  <xs:element name="getLaunchFilterResponse" type="tns:getLaunchFilterResponse" />
+  <xs:element name="getLaunchedSurveyFilter" type="tns:getLaunchedSurveyFilter" />
+  <xs:element name="getLaunchedSurveyFilterResponse" type="tns:getLaunchedSurveyFilterResponse" />
+  <xs:element name="listContactManagers" type="tns:listContactManagers" />
+  <xs:element name="listContactManagersResponse" type="tns:listContactManagersResponse" />
+  <xs:element name="lockContact" type="tns:lockContact" />
+  <xs:element name="lockContactResponse" type="tns:lockContactResponse" />
+  <xs:element name="renameContactManager" type="tns:renameContactManager" />
+  <xs:element name="renameContactManagerResponse" type="tns:renameContactManagerResponse" />
+  <xs:element name="requirePasswordChange" type="tns:requirePasswordChange" />
+  <xs:element name="requirePasswordChangeResponse" type="tns:requirePasswordChangeResponse" />
+  <xs:element name="resetContactPassword" type="tns:resetContactPassword" />
+  <xs:element name="resetContactPasswordResponse" type="tns:resetContactPasswordResponse" />
+  <xs:element name="setKeyField" type="tns:setKeyField" />
+  <xs:element name="setKeyFieldResponse" type="tns:setKeyFieldResponse" />
+  <xs:element name="unlockContact" type="tns:unlockContact" />
+  <xs:element name="unlockContactResponse" type="tns:unlockContactResponse" />
+  <xs:element name="updateLaunchFilter" type="tns:updateLaunchFilter" />
+  <xs:element name="updateLaunchFilterResponse" type="tns:updateLaunchFilterResponse" />
+  <xs:element name="wsContact" type="tns:WSContact" />
+  <xs:element name="wsContactManager" type="tns:WSContactManager" />
+  <xs:element name="wsContactStatistics" type="tns:WSContactStatistics" />
+  <xs:element name="wsContactStatus" type="tns:WSContactStatus" />
+  <xs:element name="wsLastSurveyStatus" type="tns:WSLastSurveyStatus" />
+  <xs:element name="wsModel" type="tns:WSModel" />
+  <xs:element name="wsModelColumn" type="tns:WSModelColumn" />
+  <xs:element name="wsModelColumnType" type="tns:WSModelColumnType" />
+  <xs:element name="wsModelFilterGroup" type="tns:WSModelFilterGroup" />
+  <xs:element name="wsModelObject" type="tns:WSModelObject" />
+  <xs:element name="wsModelObjectFilter" type="tns:WSModelObjectFilter" />
+  <xs:element name="wsModelObjectFilterCondition" type="tns:WSModelObjectFilterCondition" />
+  <xs:element name="wsPortalSetting" type="tns:WSPortalSetting" />
+  <xs:complexType name="listContactManagers">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listContactManagersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSContactManager">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactInactiveAfterDays" type="xs:int" />
+          <xs:element minOccurs="0" name="formFinishedPoints" type="xs:int" />
+          <xs:element minOccurs="0" name="formStartedPoints" type="xs:int" />
+          <xs:element minOccurs="0" name="offlinePortalURL" type="xs:string" />
+          <xs:element minOccurs="0" name="onlinePortalURL" type="xs:string" />
+          <xs:element minOccurs="0" name="portalSettings" type="tns:WSPortalSetting" />
+          <xs:element minOccurs="0" name="registrationPoints" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="columns" nillable="true" type="tns:WSModelColumn" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="keyFieldName" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSPortalSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="deactivateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="emailField" type="xs:string" />
+      <xs:element minOccurs="0" name="loginField" type="xs:string" />
+      <xs:element minOccurs="0" name="passwordField" type="xs:string" />
+      <xs:element minOccurs="0" name="title" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="columnType" type="tns:WSModelColumnType" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelColumnType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="columnTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="maxValue" type="xs:string" />
+      <xs:element minOccurs="0" name="minValue" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="pattern" type="xs:string" />
+      <xs:element minOccurs="0" name="warningText" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contacts" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSContact">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModelObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statistics" type="tns:WSContactStatistics" />
+          <xs:element minOccurs="0" name="userId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSModelObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="keyFieldName" type="xs:string" />
+      <xs:element name="properties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string" />
+                  <xs:element minOccurs="0" name="value" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSContactStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateLastActivity" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateLastFinished" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateLastInvited" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateLastStarted" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="maxPoints" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numFormsFinished" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numFormsInvitedTo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numFormsStarted" type="xs:decimal" />
+      <xs:element minOccurs="0" name="points" type="xs:decimal" />
+      <xs:element minOccurs="0" name="score" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" type="tns:WSContactStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addContactsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilteredContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="filter" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelObjectFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="filters" nillable="true" type="tns:WSModelObjectFilterCondition" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="logicalCondition" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelObjectFilterCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="condition" type="tns:wsFilterCondition" />
+      <xs:element minOccurs="0" name="fieldName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="values" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilteredContactsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLaunchFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLaunchFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelFilterGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelFilterGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="filters" nillable="true" type="tns:WSModelFilter" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="logicalCondition" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSModelFilter" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="WSFieldModelFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModelFilter">
+        <xs:sequence>
+          <xs:element name="exclude" type="xs:boolean" />
+          <xs:element minOccurs="0" name="expression" type="tns:WSFilterExpression" />
+          <xs:element minOccurs="0" name="fieldName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSFilterExpression">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="WSDateFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="condition" type="tns:dateFilterExpressionConditionType" />
+          <xs:element minOccurs="0" name="valueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="valueDays" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSTextFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="condition" type="tns:textFilterExpressionConditionType" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSDecimalFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="condition" type="tns:numberFilterExpressionConditionType" />
+          <xs:element minOccurs="0" name="value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSOrgChartModelFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModelFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="childFieldName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="contactIds" nillable="true" type="xs:long" />
+          <xs:element name="exclude" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parentFieldName" type="xs:string" />
+          <xs:element name="withRoot" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSContactStatusFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" type="tns:WSContactStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSLastSurveyStatusFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" type="tns:WSLastSurveyStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSIntegerFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="condition" type="tns:numberFilterExpressionConditionType" />
+          <xs:element minOccurs="0" name="value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSNaturalNumberFilterExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSFilterExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="condition" type="tns:numberFilterExpressionConditionType" />
+          <xs:element minOccurs="0" name="value" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSActivityModelFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModelFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityType" type="tns:activityModelFilterType" />
+          <xs:element name="exclude" type="xs:boolean" />
+          <xs:element minOccurs="0" name="expression" type="tns:WSFilterExpression" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WSInModelFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSModelFilter">
+        <xs:sequence>
+          <xs:element name="exclude" type="xs:boolean" />
+          <xs:element minOccurs="0" name="fieldName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="values" nillable="true" type="tns:WSFilterExpression" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="createFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cmId" type="xs:long" />
+      <xs:element minOccurs="0" name="filter" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactByFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactByFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resetContactPassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resetContactPasswordResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contact" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addContactResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteFilterResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="updateLaunchFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filter" type="tns:WSModelFilterGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateLaunchFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelFilterGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLaunchedSurveyFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="formId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLaunchedSurveyFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelFilterGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactManagerById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactManagerByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="renameContactManager">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManager" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="renameContactManagerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lockContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lockContactResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="editContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contact" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editContactResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFiltersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createContactManager">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManager" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createContactManagerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requirePasswordChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requirePasswordChangeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="setKeyField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="uniqueKeyName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setKeyFieldResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSContactManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteContactResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="createLaunchFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cmId" type="xs:long" />
+      <xs:element minOccurs="0" name="filter" type="tns:WSModelFilterGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createLaunchFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelFilterGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filterId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:WSModelObjectFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unlockContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactManagerId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unlockContactResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:simpleType name="WSContactStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE" />
+      <xs:enumeration value="NOT_ACTIVE" />
+      <xs:enumeration value="OPT_OUT" />
+      <xs:enumeration value="INVALID_EMAIL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="wsFilterCondition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_EQUAL" />
+      <xs:enumeration value="EQUAL" />
+      <xs:enumeration value="CONTAINS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="dateFilterExpressionConditionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ABSENT" />
+      <xs:enumeration value="EXACTLY" />
+      <xs:enumeration value="MORE_THAN_AGO" />
+      <xs:enumeration value="LESS_THAN_AGO" />
+      <xs:enumeration value="ON" />
+      <xs:enumeration value="BEFORE" />
+      <xs:enumeration value="AFTER" />
+      <xs:enumeration value="BEFORE_OR_EQUAL" />
+      <xs:enumeration value="AFTER_OR_EQUAL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="textFilterExpressionConditionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONTAIN" />
+      <xs:enumeration value="ANY_WORDS" />
+      <xs:enumeration value="MATCH" />
+      <xs:enumeration value="EQUAL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="numberFilterExpressionConditionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MORE_OR_EQUAL" />
+      <xs:enumeration value="LESS_OR_EQUAL" />
+      <xs:enumeration value="EQUAL_TO" />
+      <xs:enumeration value="MORE" />
+      <xs:enumeration value="LESS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WSLastSurveyStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INCOMPLETE" />
+      <xs:enumeration value="IN_PROGRESS" />
+      <xs:enumeration value="COMPLETE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="activityModelFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONTACT_SCORE" />
+      <xs:enumeration value="CONTACT_STATUS" />
+      <xs:enumeration value="SURVEYS_FINISHED" />
+      <xs:enumeration value="LAST_INVITATION_SEND" />
+      <xs:enumeration value="LAST_SURVEY_STARTED" />
+      <xs:enumeration value="LAST_COMPLETED_SURVEY" />
+      <xs:enumeration value="LAST_SURVEY_STATUS" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

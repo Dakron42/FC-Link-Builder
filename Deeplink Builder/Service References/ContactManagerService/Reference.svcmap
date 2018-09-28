@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6481ce28-b918-43df-b620-fc2008cbaba6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://app.form.com/Member/api/v81/contact/ContactsManagementService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ContactsManagementService.xsd" MetadataType="Schema" ID="13ccb8e3-6555-43f8-b480-03c2712dfb14" SourceId="1" SourceUrl="http://app.form.com/Member/api/v81/contact/ContactsManagementService?xsd=2" />
+    <MetadataFile FileName="ContactsManagementService1.xsd" MetadataType="Schema" ID="927d47f6-0273-4fae-8bab-c9cce6aafeb9" SourceId="1" SourceUrl="http://app.form.com/Member/api/v81/contact/ContactsManagementService?xsd=1" />
+    <MetadataFile FileName="ContactsManagementService.wsdl" MetadataType="Wsdl" ID="dc9a00e8-54ba-495e-8fd2-8be4b98244c7" SourceId="1" SourceUrl="http://app.form.com/Member/api/v81/contact/ContactsManagementService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

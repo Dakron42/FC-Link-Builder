@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://v81.api.keysurvey.com" targetNamespace="http://v81.api.keysurvey.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WSIllegalArgumentException" nillable="true" type="tns:WSFault" />
+  <xs:element name="WSObjectNotFoundException" nillable="true" type="tns:WSFault" />
+  <xs:element name="WSSecurityException" nillable="true" type="tns:WSFault" />
+  <xs:complexType name="WSFault">
+    <xs:sequence>
+      <xs:element name="error" type="xs:int" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element minOccurs="0" name="service" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
