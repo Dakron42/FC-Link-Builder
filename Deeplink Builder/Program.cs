@@ -10,9 +10,7 @@ namespace Deeplink_Builder
     {
         static void Main(string[] args)
         {
-            //var wauid = 7d7736b2 - 9981 - 49e7 - a2e8 - 8e2e978f0da1
-            //var FC_UserName = "ASSERO_DEMO_API_EXTERNAL";
-            //var FC_Password = "24drowssaPAsisihT";
+       
             //The current example only works with app.form.com if you are
             //using Single Sign On then you will need to update the WSDL 
             //address in the service reference and refresh each service.
